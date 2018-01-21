@@ -1,0 +1,12 @@
+{
+    "name": "chromium-downloader",
+    "version": "1.0.0",
+    "main": "index.js",
+    "bin": "cli.js",
+    "license": "MIT",
+    "dependencies": {
+        "commander": "^2.13.0",
+        "extract-zip": "^1.6.6",
+        "progress": "^2.0.0"
+    }
+}
