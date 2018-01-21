@@ -20,13 +20,13 @@ Usage: chromium-downloader -o <path> -r <number> [options]
 You can also use the chrome-downloader node api:
 
 ```javascript
-const download = require('chromium-downloader');
+const download = require('./src/chromium-downloader');
 
-const totalDownloaded;
+let totalDownloaded = 0;
 const onProgress = (totalBytes, chunkBytes) => {
     totalDownloaded += chunkBytes;
-    console.log(`Downloaded ${100 * totalDownloaded / totalBytes}%`)
-}
+    console.log(`Downloaded ${100 * totalDownloaded / totalBytes}%`);
+};
 
 const options = {
     folderPath: './downloads',
@@ -40,6 +40,6 @@ download(options)
         console.log(`Chromium r${revision} downloaded to ${executablePath}`);
     })
     .catch(error => {
-        console.error(`ERROR: Failed to download Chromium r${revision}!`, error);
+        console.error(`ERROR: Failed to download Chromium!`, error);
     });
 ```
